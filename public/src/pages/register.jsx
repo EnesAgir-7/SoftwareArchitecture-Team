@@ -2,16 +2,73 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from 'axios';
+import { registerRoute } from "../utils/APIRoutes";
 
 function register() {
-    const handleSubmit = (event)=>{
+    //const navigate = useNavigate();
+    const [values, setValues] = useState({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        address:"",
+    });
+    const toastOptions={
+        position:"botton-right",
+        autoClose:8000,
+        pauseOnHover: true,
+        theme:"dark",
+    }
+    const handleSubmit = async(event)=>{
         event.preventDefault();
-        alert("form")
+        if(handleValidation()){
+            const {password, confirmPassword, username,email,address}=values;
+            const {data} = await axios.post(registerRoute,{
+                username,email,password,address,
+            });
+        }
+    };
+
+    const handleValidation = ()=>{
+        const {password,confirmPassword, username, email, address}= values;
+        console.log("inm validation",toast);
+        if (password !== confirmPassword) {
+            toast.error(
+                "Password and confirm password should be same.",toastOptions
+            );
+            return false;
+        }
+        else if(username.length<3){
+            toast.error(
+                "Username should be greater than 3 characters.",toastOptions
+            );
+            return false;
+        }
+        else if(password.length<4){
+            toast.error(
+                "Password should be greater than 4 characters.",toastOptions
+            );
+            return false;
+        }
+        else if(email===""){
+            toast.error("email is required",toastOptions);
+            return false;
+        }
+        else if(address===""){
+            toast.error("address is required",toastOptions);
+            return false;
+        }
+        return true;
     }
-    const handleChange = (event)=>{
-        
-    }
+
+    const handleChange = (event) => {
+        setValues({ ...values, [event.target.name]: event.target.value });
+    };
     return (
+        <>
         <FormContainer>
             <form onSubmit={(event)=>handleSubmit(event)}>
                 <div className="brand">
@@ -29,6 +86,8 @@ function register() {
                 </span>
             </form>
         </FormContainer>
+        <ToastContainer />
+        </>
     )
 }
 
