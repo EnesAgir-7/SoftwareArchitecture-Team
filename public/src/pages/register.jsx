@@ -8,7 +8,7 @@ import axios from 'axios';
 import { registerRoute } from "../utils/APIRoutes";
 
 function register() {
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [values, setValues] = useState({
         username: "",
         email: "",
@@ -25,16 +25,26 @@ function register() {
     const handleSubmit = async(event)=>{
         event.preventDefault();
         if(handleValidation()){
+            //& afterwords we need for navigate to chat page
+            // console.log("in validation",registerRoute);
             const {password, confirmPassword, username,email,address}=values;
             const {data} = await axios.post(registerRoute,{
                 username,email,password,address,
             });
+            if(data.status === false){
+                toast.error(data.message, toastOptions);
+            }
+            if(data.status === true){
+                localStorage.setItem('chatapp-user',JSON.stringify(data.user))
+                //& user to local storage and navigate to the chat container
+                navigate("/");
+            }
         }
     };
 
     const handleValidation = ()=>{
         const {password,confirmPassword, username, email, address}= values;
-        console.log("inm validation",toast);
+        console.log("in validation",toast);
         if (password !== confirmPassword) {
             toast.error(
                 "Password and confirm password should be same.",toastOptions
