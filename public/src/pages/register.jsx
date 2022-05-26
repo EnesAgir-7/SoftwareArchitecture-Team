@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from 'axios';
 import { registerRoute } from "../utils/APIRoutes";
 
-function register() {
+function Register() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
         username: "",
@@ -24,17 +24,17 @@ function register() {
     };
 
     //^ this is running olny first time the component is loaded
-    // useEffect(()=>{
-    //     if(localStorage.getItem('chatapp-user')){
-    //         navigate('/')
-    //     }
-    // },[]);
+    useEffect(()=>{
+        if(localStorage.getItem('chatapp-user')){
+            navigate('/')
+        }
+    },[]);
 
     const handleSubmit = async(event)=>{
         event.preventDefault();
         if(handleValidation()){
+            const {password, username,email,address}=values;
             // console.log("in validation",registerRoute);
-            const {password, confirmPassword, username,email,address}=values;
             const {data} = await axios.post(registerRoute,{
                 username,email,password,address,
             });
@@ -176,4 +176,4 @@ const FormContainer = styled.div`
     }
 `;
 
-export default register
+export default Register;
