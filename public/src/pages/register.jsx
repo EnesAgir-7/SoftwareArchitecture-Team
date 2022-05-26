@@ -17,15 +17,22 @@ function register() {
         address:"",
     });
     const toastOptions={
-        position:"botton-right",
+        position:"bottom-right",
         autoClose:8000,
         pauseOnHover: true,
         theme:"dark",
-    }
+    };
+
+    //^ this is running olny first time the component is loaded
+    // useEffect(()=>{
+    //     if(localStorage.getItem('chatapp-user')){
+    //         navigate('/')
+    //     }
+    // },[]);
+
     const handleSubmit = async(event)=>{
         event.preventDefault();
         if(handleValidation()){
-            //& afterwords we need for navigate to chat page
             // console.log("in validation",registerRoute);
             const {password, confirmPassword, username,email,address}=values;
             const {data} = await axios.post(registerRoute,{
@@ -35,7 +42,7 @@ function register() {
                 toast.error(data.message, toastOptions);
             }
             if(data.status === true){
-                localStorage.setItem('chatapp-user',JSON.stringify(data.user))
+                localStorage.setItem('chatapp-user',JSON.stringify(data.user));
                 //& user to local storage and navigate to the chat container
                 navigate("/");
             }
