@@ -28,7 +28,7 @@ module.exports.register =async (req,res,next)=>{
     //console.log(req.body)
 
     try {
-        const {username, email,password}=req.body;
+        const {username, email,password,address}=req.body;
         const usernameCheck =await User.findOne({username});
         if(usernameCheck)
             return res.json({message:"username already used",status:false});
@@ -41,6 +41,7 @@ module.exports.register =async (req,res,next)=>{
         const user = await User.create({
             email,
             username,
+            address,
             password: hashedPassword,
         });
         delete user.password;
