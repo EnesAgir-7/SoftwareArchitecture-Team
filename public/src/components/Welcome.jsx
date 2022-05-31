@@ -6,11 +6,7 @@ export default function Welcome() {
 
     useEffect(()=>{
         var fnc5 = async function(){
-            setUserName(
-                await JSON.parse(
-                    localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
-                ).username
-                );
+            
         };
         fnc5();
     },[]);

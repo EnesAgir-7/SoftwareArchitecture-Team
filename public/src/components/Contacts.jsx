@@ -10,7 +10,7 @@ export default function Contacts({contacts,currentUser,changeChat}) {
     useEffect(()=>{
         var fnc4 = async function(){
             //! ?contactlara ulasamiyorum neden anlamadim 
-            console.log(contacts);
+            //console.log(contacts);
             if(currentUser){
                 setCurrentUserImage(currentUser.avatarImage);
                 setCurrentUserName(currentUser.username);
