@@ -3,13 +3,15 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import { allUsersRoute } from '../utils/APIRoutes';
+import Contacts from '../components/Contacts';
+import Welcome from '../components/Welcome';
 
 
 export default function Chat() {
     const navigate = useNavigate();
     const [contacts, setContacts] = useState([]);
     const [currentUser, setCurrentUser] = useState(undefined);
-    
+    const [currentChat, setCurrentChat] = useState(undefined);
 
     useEffect(()=>{
         var fnc3 = async function(){
@@ -38,12 +40,16 @@ export default function Chat() {
         fnc2();
     },[currentUser])
     
-    
+    const handleChatChange = (chat) => {
+        setCurrentChat(chat);
+    };
     
     return (
         <>
             <Container>
                 <div className="container">
+                    <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
+                    <Welcome currentUser={currentUser}/>
                 </div>
             </Container>
         </>

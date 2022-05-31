@@ -27,7 +27,7 @@ function Register() {
     //^ this is running olny first time the component is loaded
     useEffect(()=>{
         if(localStorage.getItem('chatapp-user')){
-            navigate('/')
+            //navigate('/')
         }
     },[]);
 
