@@ -63,4 +63,18 @@ module.exports.setAvatar =async (req,res,next)=>{
     } catch (err) {
         next(err)
     }
+};
+
+module.exports.getAllUsers =async (req,res,next)=>{
+    try {
+        //? I'm not sure about address
+        //! Check again!!!
+        //^ here is select all the id but not including our user id
+        const users = await User.find({_id:{$ne:req.params.id}}).select([
+            "email","username","avatarImage","_id","address"
+        ]);
+        return res.json(users);
+    } catch (err) {
+        next(err)
+    }
 }
