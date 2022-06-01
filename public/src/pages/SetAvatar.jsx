@@ -32,7 +32,7 @@ export default function SetAvatar() {
             }
         };
         fnc1();
-    },[])
+    },[]);
 
     const setProfilePicture = async()=>{
         if(selectedAvatar===undefined){

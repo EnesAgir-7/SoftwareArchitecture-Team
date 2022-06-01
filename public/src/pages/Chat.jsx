@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { allUsersRoute } from '../utils/APIRoutes';
 import Contacts from '../components/Contacts';
 import Welcome from '../components/Welcome';
+import ChatContainer from '../components/ChatContainer';
 
 
 export default function Chat() {
@@ -12,6 +13,16 @@ export default function Chat() {
     const [contacts, setContacts] = useState([]);
     const [currentUser, setCurrentUser] = useState(undefined);
     const [currentChat, setCurrentChat] = useState(undefined);
+    const [isLoaded,setIsLoaded] = useState(false);
+
+    // useEffect(()=>{
+    //     var fnc1 = async function(){
+    //         if(!localStorage.getItem("chatapp-user")){
+    //             navigate("/login");
+    //         }
+    //     };
+    //     fnc1();
+    // },[]);
 
     useEffect(()=>{
         var fnc3 = async function(){
@@ -20,6 +31,7 @@ export default function Chat() {
             }
             else{
                 setCurrentUser(await JSON.parse(localStorage.getItem("chatapp-user")));
+                setIsLoaded(true);
             }
         };
         fnc3();
@@ -52,7 +64,8 @@ export default function Chat() {
                         <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
                     </div>
                     <div>
-                        <Welcome currentUser={currentUser}/>
+                        {isLoaded && currentChat ===undefined?
+                        (<Welcome currentUser={currentUser}/>): (<ChatContainer currentChat={currentChat}/>)}
                     </div>
                 </div>
             </Container>
