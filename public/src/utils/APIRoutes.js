@@ -3,5 +3,5 @@ export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
 export const SetAvatarRouter = `${host}/api/auth/setAvatar`;
 //^ get all contacts from database 
-export const allUsersRoute = `${host}/api/auto/allusers`;
+export const allUsersRoute = `${host}/api/auth/allusers`;
 

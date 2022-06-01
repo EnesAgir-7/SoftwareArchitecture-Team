@@ -15,7 +15,7 @@ export default function Chat() {
 
     useEffect(()=>{
         var fnc3 = async function(){
-            if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
+            if (!localStorage.getItem("chatapp-user")) {
                 navigate("/login");
             }
             else{
