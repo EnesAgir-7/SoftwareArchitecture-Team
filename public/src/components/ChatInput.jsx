@@ -5,29 +5,43 @@ import Picker from 'emoji-picker-react'
 import styled from 'styled-components';
 
 
-export default function ChatInput() {
+export default function ChatInput(handleSendMessage) {
 
     const [showEmojiPicker,setShowEmojiPicker]=useState(false);
     const [message,setMessage] = useState("");
+
+    const sendChat = (event) =>{
+        event.preventDefault();
+        if(message.length>0){
+            handleSendMessage(message);
+            setMessage("");
+        }
+    }
+
+    const handleEmojiClick = (event, emoji)=>{
+        let message = message;
+        message += emoji.emoji;
+        setMessage(message);
+    }
 
     const handleEmojiPickerHideShow =()=>{
         setShowEmojiPicker(!showEmojiPicker);
     }
 
     return (
-        <Container>
+        <Container className='main-container'>
             <div className="button-container">
                 <div className="emoji">
-                    <BsEmojiSmileFill onClick={handleEmojiPickerHideShow}/>
+                    <BsEmojiSmileFill onClick={handleEmojiPickerHideShow} />
                     {
-                        showEmojiPicker && <Picker/>
+                        showEmojiPicker && <Picker onEmojiClick={handleEmojiClick}/>
                     }
                 </div>
             </div>
-            <div>
+            <div className='type-area'>
 
-            <form className='input-container'>
-                <input type="text" placeholder='type your message...' />
+            <form className='input-container' onSubmit={(event) => sendChat(event)}>
+                <input type="text" placeholder='type your message...' value={message} onChange={(e) => setMessage(e.target.value)}/>
                 <button className='submit'>
                     <IoMdSend />
                 </button>
@@ -97,6 +111,10 @@ const Container = styled.div`
                 }
             }
         }
+    }
+    //! this are temporary need to change
+    .type-area{
+        height:70vh;
     }
 
     .input-container {
