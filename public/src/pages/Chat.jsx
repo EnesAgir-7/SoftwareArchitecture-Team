@@ -48,8 +48,12 @@ export default function Chat() {
         <>
             <Container>
                 <div className="container">
-                    <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
-                    <Welcome currentUser={currentUser}/>
+                    <div className='contact-container'>
+                        <Contacts contacts={contacts} currentUser={currentUser} changeChat={handleChatChange}/>
+                    </div>
+                    <div>
+                        <Welcome currentUser={currentUser}/>
+                    </div>
                 </div>
             </Container>
         </>
@@ -68,11 +72,15 @@ const Container = styled.div`
     .container {
         height: 85vh;
         width: 85vw;
-        background-color: #00000076;
+        background-color: #00000066;
         display: grid;
         grid-template-columns: 25% 75%;
         @media screen and (min-width: 720px) and (max-width: 1080px) {
-        grid-template-columns: 35% 65%;
+            grid-template-columns: 35% 65%;
         }
+        .contact-container{
+        height:100vh;
     }
+    }
+    
 `;

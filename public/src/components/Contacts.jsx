@@ -25,8 +25,7 @@ export default function Contacts({contacts,currentUser,changeChat}) {
     };
 
     return <>
-        (
-            {currentUserImage && currentUserName &&
+        {currentUserImage && currentUserName &&
             (
                 <Container>
                     <div className="brand">
@@ -55,8 +54,7 @@ export default function Contacts({contacts,currentUser,changeChat}) {
                     </div>   
                 </Container>
             )
-            }
-        )
+        }
     </>
 }
 
@@ -104,14 +102,14 @@ const Container = styled.div`
         align-items: center;
         transition: 0.5s ease-in-out;
         .avatar {
-        img {
-            height: 3rem;
-        }
+            img {
+                height: 3rem;
+            }
         }
         .username {
-        h3 {
-            color: white;
-        }
+            h3 {
+                color: white;
+            }
         }
     }
     .selected {
@@ -119,7 +117,7 @@ const Container = styled.div`
     }
     }
     .current-user {
-    background-color: #0d0d30;
+    background-color: #0757AA;
     display: flex;
     justify-content: center;
     align-items: center;

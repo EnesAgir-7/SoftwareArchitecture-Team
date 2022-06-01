@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Robot from "../assets/robot.gif";
-export default function Welcome() {
+
+export default function Welcome({currentUser}) {
     const [userName, setUserName] = useState("");
 
     useEffect(()=>{
@@ -15,7 +16,7 @@ export default function Welcome() {
         <Container>
         <img src={Robot} alt="" />
         <h1>
-            Welcome, <span>{userName}!</span>
+            Welcome, <span>{currentUser.userName}!</span>
         </h1>
         <h3>Please select a chat to Start messaging.</h3>
         </Container>
@@ -29,7 +30,7 @@ const Container = styled.div`
     color: white;
     flex-direction: column;
     img {
-        height: 20rem;
+        height: 25rem;
     }
     span {
         color: #4e0eff;
