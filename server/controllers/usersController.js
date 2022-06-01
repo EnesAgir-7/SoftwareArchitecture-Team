@@ -7,14 +7,14 @@ module.exports.login =async (req,res,next)=>{
     //console.log(req.body)
 
     try {
-        const {password, username}=req.body;
+        const {username,password}=req.body;
         const user =await User.findOne({username});
         if(!user)
-            return res.json({message:"Incorrect username/password",status:false});
+            return res.json({message:"Incorrect username",status:false});
             //^ compare the password which was send from fround end and password which is inside the database 
-            const isPassword = await bcrypt.hash(password,user.password);
+            const isPasswordValid = await bcrypt.compare(password,user.password);
         if(!isPasswordValid){
-            return res.json({message:"Incorrect username/password", status:false})
+            return res.json({message:"Incorrect password", status:false});
         }
         delete user.password;
         return res.json({status: true, user});
@@ -37,6 +37,7 @@ module.exports.register =async (req,res,next)=>{
             return res.json({message:"e-mail already used",status:false});
         //! if everything is perfect =>hash the password
         //? 10 is type of encryption //=> without number is not running perfectly 
+        //^ hash-> the password bcrypt and sending to inside the database 
         const hashedPassword = await bcrypt.hash(password,10);
         const user = await User.create({
             email,
