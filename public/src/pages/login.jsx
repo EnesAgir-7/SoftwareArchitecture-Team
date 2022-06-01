@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
+import { loginRoute } from "../utils/APIRoutes";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from 'axios';
-import { loginRoute } from "../utils/APIRoutes";
 
-function Login() {
+export default function Login() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
         username: "",
@@ -156,5 +156,3 @@ const FormContainer = styled.div`
         }
     }
 `;
-
-export default Login
