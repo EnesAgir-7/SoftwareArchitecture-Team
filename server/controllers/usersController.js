@@ -1,5 +1,5 @@
-//& brcypt used for encryption of the password
-const brcypt = require("bcrypt");
+//& bcrypt used for encryption of the password
+const bcrypt = require("bcrypt");
 const User = require("../model/userModel");
 
 module.exports.login =async (req,res,next)=>{
@@ -12,7 +12,7 @@ module.exports.login =async (req,res,next)=>{
         if(!user)
             return res.json({message:"Incorrect username/password",status:false});
             //^ compare the password which was send from fround end and password which is inside the database 
-            const isPassword = await brcypt.hash(password,user.password);
+            const isPassword = await bcrypt.hash(password,user.password);
         if(!isPasswordValid){
             return res.json({message:"Incorrect username/password", status:false})
         }
@@ -37,7 +37,7 @@ module.exports.register =async (req,res,next)=>{
             return res.json({message:"e-mail already used",status:false});
         //! if everything is perfect =>hash the password
         //? 10 is type of encryption //=> without number is not running perfectly 
-        const hashedPassword = await brcypt.hash(password,10);
+        const hashedPassword = await bcrypt.hash(password,10);
         const user = await User.create({
             email,
             username,
