@@ -112,7 +112,7 @@ const Container = styled.div`
             }
         }
     }
-    //! this are temporary need to change
+    //! this are temporary solution
     .type-area{
         height:70vh;
     }
