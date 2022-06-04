@@ -5,3 +5,5 @@ export const SetAvatarRouter = `${host}/api/auth/setAvatar`;
 //^ get all contacts from database 
 export const allUsersRoute = `${host}/api/auth/allusers`;
 
+export const sendMessageRoute = `${host}/api/message/addMsg`;
+
