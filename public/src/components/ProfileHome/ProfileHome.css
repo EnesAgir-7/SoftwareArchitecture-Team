@@ -1,0 +1,104 @@
+.profile{
+    position: absolute;
+    width: 350px;
+    height: 600px;
+    left: 1rem;
+    top: 100px;
+    background: rgba(78, 136, 204, 0.5);
+    border-radius: 12px;
+}
+
+image{
+    height: 3rem;
+    margin-left: 10px;
+}
+
+.user{
+    margin-top: -6rem;
+    margin-left: 1rem;
+}
+
+.profileButtons{
+    margin-top: 1.5rem;
+}
+
+.settings{
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    width: 142px;
+    border: none;
+    background: #1F5CA5;
+    color: white;
+    height: 39px;
+    font-size:medium;
+}
+
+.addConnection{
+    width: 142px;
+    border: none;
+    background: #1F5CA5;
+    color: white;
+    height: 39px;
+    margin-left: 2rem;
+    color: white;
+    font-size: medium;
+}
+
+.settingsLinks{
+    color: #1F5CA5;
+    display:contents;
+    font-size: large;
+    border: none;
+}
+
+.manageProfile{
+    margin-top: 2rem;
+    margin-left: 385px;
+    background-color: rgba(78, 136, 204, 0.1);
+    height: 540px;
+    width: 85rem;
+    margin-left: 22rem;
+}
+
+.settingBtn1{
+position: absolute;
+width: 175px;
+height: 40px;
+margin-left: -15rem;
+margin-top: 7rem;
+background: rgba(217, 217, 217, 0.10);
+border: none;
+font-size: large;
+color: #1F5CA5;
+box-shadow: none;
+border-left: 4px solid #1F5CA5;
+}
+
+.settingBtn3{
+position: absolute;
+width: 175px;
+height: 40px;
+margin-top: 12rem;
+margin-left: -15rem;
+border: none;
+background: rgba(217, 217, 217, 0.12);
+border-left: 4px solid #1F5CA5;
+font-size: large;
+color: #1F5CA5;
+box-shadow: none;
+}
+
+
+
+.settingBtn4{
+    position: absolute;
+width: 175px;
+height: 40px;
+margin-top: 17rem;
+margin-left: -15rem;
+border: none;
+background: rgba(217, 217, 217, 0.12);
+border-left: 4px solid #1F5CA5;
+color: #1F5CA5;
+font-size: large;
+box-shadow: none;
+}

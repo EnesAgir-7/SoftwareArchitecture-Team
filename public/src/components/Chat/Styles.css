@@ -1,0 +1,32 @@
+.Friend{
+    margin: 10px;
+    flex-wrap: wrap;
+    width: 209px;
+    text-align: center;
+    background: rgba(31, 92, 165, 0.27);
+    display:inline-flex;
+    
+}
+.Holder{
+    align-self: flex-start;
+    position:absolute;
+    left: 400px;
+    top: 2.5rem;
+    width: 1000px;
+    height: 1000px;
+    overflow-y:scroll; 
+    display: inline-block;
+    border: none;
+    
+}
+
+.requestBtn{
+    margin-left: -21.3rem;
+    height: 40px;
+    width: 12rem ;
+    margin-top: 11rem;
+    background-color: #1F5CA5;
+    color: white;
+    border: none;
+    font-size: medium;
+}

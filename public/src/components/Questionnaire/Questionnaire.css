@@ -1,0 +1,38 @@
+.interests{
+    position: absolute;
+    width: 80rem;
+    margin-top: -rem;
+    margin-left: 8rem;
+    justify-content:center;
+    border-radius: 20px;
+    }
+    
+.hobbiesHeader{
+        margin-top: 5rem;
+        color: #1F5CA5;
+        font-weight: bolder;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hobbies-btn{
+        margin-top: 30rem;
+        margin-right: 7rem;
+        width: 15rem;
+        font-size: 22px;
+    }
+   .hobbies-btn:hover{
+        width: 17rem;
+    }
+    
+    .hobbies{
+        display:flex;
+        margin-left: 35rem;
+        color: #1F5CA5;
+        width: 140px;
+        font-size: 20px;
+        padding: 8px;
+    }
+    .hobbiesInput{
+        margin-right: 2rem;
+    }

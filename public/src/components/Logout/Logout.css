@@ -1,0 +1,16 @@
+.logoutButton{
+    display: flex;
+    justify-content: center;
+    margin-left: 88.5rem;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    background-color: #1F5CA5;
+    border: none;
+    cursor: pointer;
+    width: 80px;
+    margin-top: 2rem;
+}
+.logoutButton.svg {
+        font-size: 12rem;
+        color: #ebe7ff;
+    }

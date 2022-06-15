@@ -1,0 +1,97 @@
+.events{
+    position: absolute;
+width: 1113px;
+height: 594px;
+left: 367px;
+top: 0.2rem;
+
+background: rgba(78, 136, 204, 0.1);
+}
+
+.createEvent{
+    margin-top: 8rem;
+}
+
+.EventInput{
+    margin: 5px;
+    height: 35px;
+    width: 300px;
+    display: inline-block;
+    padding-left: 10px;
+    background: white;
+border: none;
+border-left: 2px solid #1F5CA5;
+
+}
+
+.eventBtn1{
+position: absolute;
+width: 215px;
+height: 51px;
+left: 38px;
+top: 2rem;
+border: none;
+color: #1F5CA5;
+font-size: large;
+background: rgba(31, 92, 165, 0.04);
+}
+
+.eventBtn1:focus{
+    border: 4px solid #1F5CA5;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.eventBtn2{
+    position: absolute;
+    width: 215px;
+    height: 51px;
+    left: 20rem;
+    top: 2rem;
+    border: none;
+    font-size: large;
+    color: #1F5CA5;
+    background: rgba(31, 92, 165, 0.04);
+    }
+
+    .eventBtn2:focus{
+        border: 4px solid #1F5CA5;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .eventCard{
+        border: 1px solid black;
+        width: 250px;
+        height: 150px;
+        margin-top: 4rem;
+        margin-left: 2rem;
+    }
+
+    .eventsHolder{
+        align-self: flex-start;
+        position:absolute;
+        width: 1113px;
+        height: 500px;
+        left: 3px;
+        top: 6rem;
+        overflow-y:scroll; 
+        display: inline-block;
+        border: none;
+    }
+
+    .Event{
+        display:inline-flex;
+    }
+
+    .eventBtn{
+        position: absolute;
+        width: 97px;
+        height: 39px;
+        left: 32rem;
+        top: 32rem;
+        font-size: large;
+        color: white;
+        border: none;
+
+        background: #1F5CA5;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    }

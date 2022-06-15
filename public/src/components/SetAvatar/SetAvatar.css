@@ -1,0 +1,26 @@
+.loader {
+    max-inline-size: 100%;
+}
+
+h2 {
+    color: #1F5CA5;
+    margin-top: 7%;
+    }
+
+.submit-btn {
+    background-color: #1F5CA5;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    width: 280px;
+    right: 30px;
+    text-transform: uppercase;
+}
+
+submit-btn.hover{
+    width: 300px;
+}

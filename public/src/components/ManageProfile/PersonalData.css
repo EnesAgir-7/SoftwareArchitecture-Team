@@ -1,0 +1,22 @@
+.PersonalData{
+    margin-top: 9rem;
+    width: 30rem;
+    height: 30rem;
+}
+
+.first{
+    margin-right: 2rem;
+}
+
+.second{
+    margin-left: 35rem;
+    margin-top: -13.5rem;
+}
+
+.personalDataBtn{
+    margin-left: 26rem;
+}
+
+.PD_label{
+    margin-right: 18rem;
+}

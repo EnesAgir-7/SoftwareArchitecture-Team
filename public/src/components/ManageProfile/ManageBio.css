@@ -1,0 +1,15 @@
+.mBio{
+    margin-top: 9rem;
+    align-content: flex-start;
+    width:max-content;
+}
+
+.aboutInput{
+    width: 50rem;
+    height: 15rem;
+    margin-left: -1.5rem;
+}
+
+.BioBtn{
+    margin-right: 47.5rem;
+}

@@ -1,0 +1,43 @@
+
+.profileBtn1{
+position: absolute;
+width: 175px;
+height: 48px;
+left: 22.5rem;
+top: 5rem;
+border: none;
+background: rgba(217, 217, 217, 0.12);
+border-bottom: 4px solid #1F5CA5;
+color: #1F5CA5;
+font-size: large;
+box-shadow: none ;
+}
+
+.profileBtn2{
+position: absolute;
+left: 36.5rem;
+top: 5rem;
+width: 175px;
+height: 48px;
+border: none;
+background: rgba(217, 217, 217, 0.12);
+box-shadow: none;
+border-bottom: 4px solid #1F5CA5;
+color: #1F5CA5;
+font-size: large;
+}
+
+.profileBtn4{
+position: absolute;
+width: 175px;
+height: 48px;
+left: 50.5rem;
+top: 5rem;
+border: none;
+background: rgba(217, 217, 217, 0.12);
+box-shadow: none;
+border-bottom: 4px solid #1F5CA5;
+color: #1F5CA5;
+font-size: large;
+}
+
